@@ -29,7 +29,7 @@ def main():
         filename = "./test/" + filename        
         with open(filename, mode="r") as fails:
             text = fails.readline()
-        parents = [int(x) for x in list(text).split())]
+        parents = [int(x) for x in list(text.split())]
 
     print(compute_height(n, parents))
 
