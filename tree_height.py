@@ -22,13 +22,14 @@ def main():
     # implement input form keyboard and from files
     text = input()
     if 'I' in text:
+        n = int(input("Number of elements: "))
         parents = [int(x) for x in list(input("Parents:").split())]
     if 'F' in text:
         filename = input()
         filename = "./test/" + filename        
         with open(filename, mode="r") as fails:
             text = fails.readline()
-            print("text")
+        parents = [int(x) for x in list(text).split())]
 
     print(compute_height(n, parents))
 
