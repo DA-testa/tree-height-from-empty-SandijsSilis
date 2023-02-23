@@ -23,7 +23,7 @@ def main():
     text = input()
     if 'I' in text:
         n = int(input())
-        parents = np.array([int(x) for x in list(input().split())])
+        parents = numpy.array([int(x) for x in list(input().split())])
     if 'F' in text:
         filename = input()
         filename = "./test/" + filename        
