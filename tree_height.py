@@ -31,8 +31,6 @@ def main():
         # with open("file.txt", mode="r") as fails:
             n = int(fails.readline())
             parents = fails.readline()
-            print(n)
-            print(parents)
         parents = numpy.array([int(x) for x in list(parents.split())])
 
     print(compute_height(n, parents))
