@@ -25,9 +25,9 @@ def main():
         n = int(input())
         parents = [int(x) for x in list(input().split())]
     if 'F' in text:
-        # filename = "./test/" + input()     
-        # with open(filename, mode="r") as fails:
-        with open("file.txt", mode="r") as fails:
+        filename = "./test/" + input()     
+        with open(filename, mode="r") as fails:
+        # with open("file.txt", mode="r") as fails:
             n = int(fails.readline())
             parents = fails.readline()
         parents = [int(x) for x in list(parents.split())]
