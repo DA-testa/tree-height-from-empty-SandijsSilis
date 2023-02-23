@@ -25,10 +25,10 @@ def main():
         n = int(input())
         parents = np.array([int(x) for x in list(input().split())])
     if 'F' in text:
-        # filename = input()
-        # filename = "./test/" + filename        
-        # with open(filename, mode="r") as fails:
-        with open("file.txt", mode="r") as fails:
+        filename = input()
+        filename = "./test/" + filename        
+        with open(filename, mode="r") as fails:
+        # with open("file.txt", mode="r") as fails:
             n = int(fails.readline())
             parents = fails.readline()
             print(n)
