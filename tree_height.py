@@ -2,7 +2,7 @@
 
 import sys
 import threading
-import numpy
+import numpy as np
 
 
 def compute_height(n, parents):
@@ -23,14 +23,14 @@ def main():
     text = input()
     if 'I' in text:
         n = int(input())
-        parents = numpy.array([int(x) for x in list(input().split())])
+        parents = np.array([int(x) for x in list(input().split())])
     if 'F' in text:
         # filename = "./test/" + input()     
         # with open(filename, mode="r") as fails:
         with open("file.txt", mode="r") as fails:
             n = int(fails.readline())
             parents = fails.readline()
-        parents = numpy.array([int(x) for x in list(parents.split())])
+        parents = np.array([int(x) for x in list(parents.split())])
     print(compute_height(n, parents))
 
 
