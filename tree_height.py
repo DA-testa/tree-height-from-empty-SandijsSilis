@@ -23,16 +23,14 @@ def main():
     text = input()
     if 'I' in text:
         n = int(input())
-        parents = [int(x) for x in list(input().split())]
+        parents = numpy.array([int(x) for x in list(input().split())])
     if 'F' in text:
-        filename = input()
-        filename = "./test/" + filename        
-        with open(filename, mode="r") as fails:
-        # with open("file.txt", mode="r") as fails:
+        # filename = "./test/" + input()     
+        # with open(filename, mode="r") as fails:
+        with open("file.txt", mode="r") as fails:
             n = int(fails.readline())
             parents = fails.readline()
-        parents = [int(x) for x in list(parents.split())]
-
+        parents = numpy.array([int(x) for x in list(parents.split())])
     print(compute_height(n, parents))
 
 
