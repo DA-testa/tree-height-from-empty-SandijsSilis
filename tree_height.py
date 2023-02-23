@@ -2,7 +2,7 @@
 
 import sys
 import threading
-# import numpy
+import numpy
 
 
 def compute_height(n, parents):
@@ -25,10 +25,10 @@ def main():
         n = int(input("Number of elements: "))
         parents = [int(x) for x in list(input("Parents:").split())]
     if 'F' in text:
-        filename = input()
-        filename = "./test/" + filename        
-        with open(filename, mode="r") as fails:
-        # with open("file.txt", mode="r") as fails:
+        # filename = input()
+        # filename = "./test/" + filename        
+        # with open(filename, mode="r") as fails:
+        with open("file.txt", mode="r") as fails:
             n = int(fails.readline())
             parents = fails.readline()
             print(n)
