@@ -12,7 +12,6 @@ def compute_height(n, parents):
         var = parents[i]
         while var != -1:
             var = parents[var]
-            print("Parents i:", parents[i])
             height += 1
         if max_height < height:
             max_height = height
@@ -23,19 +22,15 @@ def main():
     # implement input form keyboard and from files
     text = input()
     if 'I' in text:
-        n = int(input("Number of elements: "))
         parents = [int(x) for x in list(input("Parents:").split())]
-        print("Parents: ", parents, "Elements: ", n)
-        print("Parents: ", parents[0])
     if 'F' in text:
         filename = input()
         filename = "./test/" + filename        
         with open(filename, mode="r") as fails:
             text = fails.readline()
-            parents = [int(x) for x in list(input("Parents:").split())]
-            print("Lasamais fails: ", text)
+            print("text")
 
-    print("Max height: ", compute_height(n, parents))
+    print(compute_height(n, parents))
 
 
 # In Python, the default limit on recursion depth is rather low,
