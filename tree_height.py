@@ -28,9 +28,11 @@ def main():
         print("Parents: ", parents, "Elements: ", n)
         print("Parents: ", parents[0])
     if 'F' in text:
-        filename = input()        
-        with open("filename", mode="r") as fails:
+        filename = input()
+        filename = "./test/" + filename        
+        with open(filename, mode="r") as fails:
             text = fails.readline()
+            parents = [int(x) for x in list(input("Parents:").split())]
             print("Lasamais fails: ", text)
 
     print("Max height: ", compute_height(n, parents))
