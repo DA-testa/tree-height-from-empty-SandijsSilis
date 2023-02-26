@@ -7,14 +7,17 @@ import threading
 
 def compute_height(n, parents):
     max_height = 0
-    for i in range(n-1):
-        height = 1
-        var = parents[i]
-        while var != -1:
-            var = parents[var]
-            height += 1
-        if max_height < height:
-            max_height = height
+    if n and parents:
+        for i in range(n-1):
+            height = 1
+            var = parents[i]
+            while var != -1:
+                var = parents[var]
+                height += 1
+            if max_height < height:
+                max_height = height
+    else: 
+        return max_height
     return max_height
 
 
