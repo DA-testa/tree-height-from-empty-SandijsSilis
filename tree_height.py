@@ -25,14 +25,16 @@ def main():
     text = input()
     if 'I' in text:
         n = int(input())
-        parents = np.array(list(map(int, parents.split())))
+        parents = list(map(int, input().split()))
+        parents = np.array(parents)
     if 'F' in text:
         # filename = "./test/" + input()     
         # with open(filename, mode="r") as fails:
-        with open("./test/04", mode="r") as fails:
+        with open("./test/05", mode="r") as fails:
             n = int(fails.readline())
             parents = fails.readline()
-        parents = np.array(list(map(int, parents.split())))
+        parents = list(map(int, parents.split()))
+        parents = np.array(parents)
     print(compute_height(n, parents))
 
 
