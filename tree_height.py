@@ -2,24 +2,39 @@
 
 import sys
 import threading
+import numpy as np
 
 
 def compute_height(n, parents):
-    # Write this function
     max_height = 0
-    # Your code here
+    if np.any(n) and np.any(parents):
+        for i in range(n-1):
+            height = 1
+            var = parents[i]
+            while var != -1:
+                var = parents[var]
+                height += 1
+            max_height = max(height, max_height)
+    else: 
+        return max_height
     return max_height
 
 
 def main():
-    # implement input form keyboard and from files
-    
-    # let user input file name to use, don't allow file names with letter a
-    # account for github input inprecision
-    
-    # input number of elements
-    # input values in one variable, separate with space, split these values in an array
-    # call the function and output it's result
+    text = input()
+    if 'I' in text:
+        n = int(input())
+        parents = list(map(int, input().split()))
+        parents = np.array(parents)
+    if 'F' in text:
+        filename = "./test/" + input()     
+        with open(filename, mode="r") as fails:
+        # with open("./test/20", mode="r") as fails:
+            n = int(fails.readline())
+            parents = fails.readline()
+        parents = list(map(int, parents.split()))
+        parents = np.array(parents)
+    print(compute_height(n, parents))
 
 
 # In Python, the default limit on recursion depth is rather low,
