@@ -14,8 +14,7 @@ def compute_height(n, parents):
             while var != -1:
                 var = parents[var]
                 height += 1
-            if max_height < height:
-                max_height = height
+            max_height = max(height, max_height)
     else: 
         return max_height
     return max_height
@@ -30,7 +29,7 @@ def main():
     if 'F' in text:
         filename = "./test/" + input()     
         with open(filename, mode="r") as fails:
-        # with open("./test/05", mode="r") as fails:
+        # with open("./test/20", mode="r") as fails:
             n = int(fails.readline())
             parents = fails.readline()
         parents = list(map(int, parents.split()))
