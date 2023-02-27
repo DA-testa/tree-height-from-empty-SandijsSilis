@@ -2,12 +2,12 @@
 
 import sys
 import threading
-# import numpy as np
+import numpy as np
 
 
 def compute_height(n, parents):
     max_height = 0
-    if n.size & parents.size == 0:
+    if np.any(n) and np.any(parents):
         for i in range(n-1):
             height = 1
             var = parents[i]
@@ -25,14 +25,14 @@ def main():
     text = input()
     if 'I' in text:
         n = int(input())
-        parents = [int(x) for x in list(input().split())]
+        parents = np.array(list(map(int, parents.split())))
     if 'F' in text:
-        filename = "./test/" + input()     
-        with open(filename, mode="r") as fails:
-        # with open("file.txt", mode="r") as fails:
+        # filename = "./test/" + input()     
+        # with open(filename, mode="r") as fails:
+        with open("./test/04", mode="r") as fails:
             n = int(fails.readline())
             parents = fails.readline()
-        parents = [int(x) for x in list(parents.split())]
+        parents = np.array(list(map(int, parents.split())))
     print(compute_height(n, parents))
 
 
